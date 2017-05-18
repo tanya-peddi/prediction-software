@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Welcome to Income Predictor</title>
+    <style type="text/css">
+        .container {
+            width: 500px;
+            clear: both;
+        }
+        
+        .container input {
+            width: 100%;
+            height: 22px;
+            clear: both;
+        }
+        
+        .container select {
+            width: 100%;
+            height: 30px;
+            clear: both;
+        }
+        
+        .container option {
+            width: 100%;
+            height: 30px;
+            clear: both;
+        }
+        
+        .index {
+            float: center;
+            height: 100%;
+            width: 100%;
+            background-color: #EEEEEE;
+        }
+
+    </style>
+
+</head>
+
+<body class="index">
+    <h1>Income Predictor</h1>
+    <h2> Please fill the form below to predict income:</h2>
+    <br/>
+    <div class="container">
+        <form action="/pyproject/income_pred.py" method="POST">
+            Age: <input type="text" name="age">
+            <br/> Work Class:
+            <select name="workclass">
+                <option value = "Private">Private</option>
+                <option value = "Self-emp-not-inc">Self-emp-not-inc</option>
+                <option value = "Self-emp-inc">Self-emp-inc</option>
+                <option value = "Federal-gov">Federal-gov</option>
+                <option value = "Local-gov">Local-gov</option>
+                <option value = "State-gov">State-gov</option>
+                <option value = "Without-pay">Without-pay</option>
+                <option value = "Never-worked">Never-worked</option>
+             </select>
+            <br/> fnlwgt: <input type="text" name="fnlwgt">
+            <br/> Education:
+            <select name="education">
+                <option value = "Bachelors">Bachelors</option>
+                <option value = "Some-college">Some-college</option>
+                <option value = "11th">11th</option>
+                <option value = "HS-grad">HS-grad</option>
+                <option value = "Prof-school">Prof-school</option>
+                <option value = "Assoc-acdm">Assoc-acdm</option>
+                <option value = "Assoc-voc">Assoc-voc</option>
+                <option value = "9th">9th</option>
+                <option value = "7th-8th">7th-8th</option>
+                <option value = "12th">12th</option>
+                <option value = "Masters">Masters</option>
+                <option value = "1st-4th">1st-4th</option>
+                <option value = "10th">10th</option>
+                <option value = "Doctorate">Doctorate</option>
+                <option value = "5th-6th">5th-6th</option>
+                <option value = "Preschool">Preschool</option>
+             </select>
+            <br/> Education Number: <input type="text" name="education-num">
+            <br/> Marital Class:
+            <select name="marital-status">
+                <option value = "Married-civ-spouse">Married-civ-spouse</option>
+                <option value = "Divorced">Divorced</option>
+                <option value = "Never-married">Never-married</option>
+                <option value = "Separated">Separated</option>
+                <option value = "Widowed">Widowed</option>
+                <option value = "Married-spouse-absent">Married-spouse-absent</option>
+                <option value = "Married-AF-spouse">Married-AF-spouse</option>
+             </select>
+            <br/> Occupation:
+            <select name="occupation">
+                <option value = "Tech-support">Tech-support</option>
+                <option value = "Craft-repair">Craft-repair</option>
+                <option value = "Other-service">Other-service</option>
+                <option value = "Sales">Sales</option>
+                <option value = "Exec-managerial">Exec-managerial</option>
+                <option value = "Prof-specialty">Prof-specialty</option>
+                <option value = "Handlers-cleaners">Handlers-cleaners</option>
+                <option value = "Machine-op-inspct">Machine-op-inspct</option>
+                <option value = "Adm-clerical">Adm-clerical</option>
+                <option value = "Farming-fishing">Farming-fishing</option>
+                <option value = "Transport-moving">Transport-moving</option>
+                <option value = "Priv-house-serv">Priv-house-serv</option>
+                <option value = "Protective-serv">Protective-serv</option>
+                <option value = "Armed-Forces">Armed-Forces</option>
+             </select>
+            <br/> Relationship:
+            <select name="relationship">
+               <option value = "Wife">Wife</option>
+               <option value = "Own-child">Own-child</option>
+               <option value = "Husband">Husband</option>
+               <option value = "Not-in-family">Not-in-family</option>
+               <option value = "Other-relative">Other-relative</option>
+               <option value = "Unmarried">Unmarried</option>
+             </select>
+            <br/> Race:
+            <select name="race">
+               <option value = "White">White</option>
+               <option value = "Asian-Pac-Islander">Asian-Pac-Islander</option>
+               <option value = "Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
+               <option value = "Other">Other</option>
+               <option value = "Black">Black</option>
+             </select>
+            <br/> Sex:
+            <select name="sex">
+               <option value = "Male">Male</option>
+               <option value = "Female">Female</option>
+             </select>
+            <br/> Capital Gain: <input type="text" name="capital-gain">
+            <br/> Capital Loss: <input type="text" name="capital-loss">
+            <br/> Hours per Week: <input type="text" name="hours-per-week">
+            <br/> Native Country:
+            <select name="native-country">
+                <option value = "United-States">United-States</option>
+                <option value = "Cambodia">Cambodia</option>
+                <option value = "England">England</option>
+                <option value = "Puerto-Rico">Puerto-Rico</option>
+                <option value = "Canada">Canada</option>
+                <option value = "Germany">Germany</option>
+                <option value = "Outlying-US(Guam-USVI-etc)">Outlying-US(Guam-USVI-etc)</option>
+                <option value = "India">India</option>
+                <option value = "Japan">Japan</option>
+                <option value = "Greece">Greece</option>
+                <option value = "South">South</option>
+                <option value = "China">China</option>
+                <option value = "Cuba">Cuba</option>
+                <option value = "Iran">Iran</option>
+                <option value = "Honduras">Honduras</option>
+                <option value = "Philippines">Philippines</option>
+                <option value = "Italy">Italy</option>
+                <option value = "Poland">Poland</option>
+                <option value = "Jamaica">Jamaica</option>
+                <option value = "Vietnam">Vietnam</option>
+                <option value = "Mexico">Mexico</option>
+                <option value = "Portugal">Portugal</option>
+                <option value = "Ireland">Ireland</option>
+                <option value = "France">France</option>
+                <option value = "Dominican-Republic">Dominican-Republic</option>
+                <option value = "Laos">Laos</option>
+                <option value = "Ecuador">Ecuador</option>
+                <option value = "Taiwan">Taiwan</option>
+                <option value = "Haiti">Haiti</option>
+                <option value = "Columbia">Columbia</option>
+                <option value = "Hungary">Hungary</option>
+                <option value = "Guatemala">Guatemala</option>
+                <option value = "Nicaragua">Nicaragua</option>
+                <option value = "Scotland">Scotland</option>
+                <option value = "Thailand">Thailand</option>
+                <option value = "Yugoslavia">Yugoslavia</option>
+                <option value = "El-Salvador">El-Salvador</option>
+                <option value = "Trinadad&Tobago">Trinadad&Tobago</option>
+                <option value = "Peru">Peru</option>
+                <option value = "Hong">Hong</option>
+                <option value = "Holand-Netherlands">Holand-Netherlands</option>
+             </select>
+            <br/><br/>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+
+</html>
